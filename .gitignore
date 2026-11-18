@@ -1,0 +1,27 @@
+# Secrets and environment files
+.env
+.env.*
+!.env.example
+
+# Python virtualenvs and build artifacts
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+*.egg-info/
+build/
+dist/
+.pytest_cache/
+
+# Runtime state, databases, screenshots, and exports
+data/
+*.db
+*.sqlite
+*.sqlite3
+storage_state.json
+screenshots/
+exports/
+
+# OS & logs
+.DS_Store
+*.log

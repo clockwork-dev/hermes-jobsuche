@@ -1,0 +1,12 @@
+{
+  "name": "jobsuche",
+  "displayName": "Jobsuche Ausbildung",
+  "version": "0.1.0",
+  "description": "Automates Bundesagentur für Arbeit (arbeitsagentur.de) Ausbildung searches, offer enrichment, SQLite application tracking, and LLM-ready Anschreiben export for FISI and IT professions.",
+  "logo": "assets/logo.svg",
+  "suggestedPrompts": [
+    "Search for new Fachinformatiker Systemintegration Ausbildung offers in Aachen within 25 km and export LLM cards",
+    "List shortlisted FISI Ausbildung offers sorted by relevance score and draft a tailored Anschreiben",
+    "Check Bundesagentur für Arbeit portal authentication status and sync new offers"
+  ]
+}

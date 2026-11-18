@@ -1,0 +1,71 @@
+manifest_version: 2
+name: jobsuche
+version: "1.0.0"
+description: "Search, monitor, score, and export Bundesagentur für Arbeit Jobsuche Ausbildung offers with SQLite deduplication, company grouping, and LLM-ready Markdown/JSON cards."
+kind: standalone
+author: "Hermes Agent"
+license: MIT
+requires_hermes: ">=0.20.0"
+provides_tools:
+  - jobsuche_search
+  - jobsuche_monitor
+  - jobsuche_export_llm
+  - jobsuche_status
+pip_dependencies:
+  - "httpx>=0.27,<1"
+  - "requests>=2.31,<3"
+  - "beautifulsoup4>=4.12,<5"
+  - "pyotp>=2.9,<3"
+  - "playwright>=1.49,<2"
+  - "pydantic>=2.7,<3"
+  - "pydantic-settings>=2.3,<3"
+  - "PyYAML>=6.0,<7"
+optional_env:
+  - name: BA_USERNAME
+    description: "Optional Bundesagentur für Arbeit portal username or email for authenticated scraping"
+    password: false
+  - name: BA_PASSWORD
+    description: "Optional Bundesagentur für Arbeit portal password for authenticated scraping"
+    password: true
+  - name: BA_TOTP_SECRET
+    description: "Optional Base32 TOTP secret for 6-digit 2FA OTP generation"
+    password: true
+  - name: BA_IMAP_HOST
+    description: "Optional IMAP host for email 2FA OTP fallback"
+    password: false
+  - name: BA_IMAP_PORT
+    description: "Optional IMAP port for email 2FA OTP fallback (default: 993)"
+    password: false
+  - name: BA_IMAP_USER
+    description: "Optional IMAP username for email 2FA OTP fallback"
+    password: false
+  - name: BA_IMAP_PASSWORD
+    description: "Optional IMAP password for email 2FA OTP fallback"
+    password: true
+  - name: JOBSUCHE_DB_PATH
+    description: "Optional override path for the Jobsuche SQLite database"
+    password: false
+  - name: JOBSUCHE_EXPORT_DIR
+    description: "Optional override directory for LLM-ready Markdown and JSON offer exports"
+    password: false
+  - name: JOBSUCHE_STORAGE_STATE
+    description: "Optional override path for Playwright storage_state.json session persistence"
+    password: false
+  - name: JOBSUCHE_SCREENSHOT_DIR
+    description: "Optional override directory for CAPTCHA guard diagnostic screenshots"
+    password: false
+  - name: JOBSUCHE_DEFAULT_CITY
+    description: "Optional default search city or 5-digit PLZ (default: Aachen)"
+    password: false
+  - name: JOBSUCHE_DEFAULT_RADIUS
+    description: "Optional default search radius in km (default: 25)"
+    password: false
+  - name: JOBSUCHE_API_BASE_URL
+    description: "Optional override URL for the Jobsuche REST API gateway"
+    password: false
+  - name: BROWSER_EXECUTABLE_PATH
+    description: "Optional path to a Chromium/Chrome executable for Playwright"
+    password: false
+  - name: BROWSER_CDP_URL
+    description: "Optional Chromium DevTools CDP URL for browser connection"
+    password: false
